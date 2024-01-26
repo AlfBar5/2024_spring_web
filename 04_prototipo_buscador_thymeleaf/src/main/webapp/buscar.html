@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Buscador por tematica</title>
+
+<!-- Bootstrap core CSS -->
+    <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<br><br>
+	
+	<div class="row">
+        <div class="col-md-4 order-md-2 mb-4"> </div>
+	
+	<div class="col-md-4 order-md-2 mb-4">
+	
+	<!-- Le ponemos buscar por que lo hemos definido en el controller @GetMapping(value="buscar") -->
+	<form action="buscar" method="GET" accept-charset="UTF-8">
+	Introduce temática: 
+	<input type="text" name="tematica" class="form-control">
+	
+	<br>
+	<br>
+	<button class="btn btn-primary btn-lg btn-block" type="submit"> BUSCAR </button>
+	
+	</form>
+</div>
+
+<div class="col-md-4 order-md-2 mb-4"></div>
+
+</div>
+
+
+
+
+	
+<div class="row">
+        <div class="col-md-4 order-md-2 mb-4" > </div>
+	
+		<div class="col-md-4 order-md-2 mb-4" align="center">
+	
+		<a href="toMenu">VOLVER</a>
+	
+		</div>
+
+		<div class="col-md-4 order-md-2 mb-4"></div>
+	
+</div>	
+
+</body>
+</html>

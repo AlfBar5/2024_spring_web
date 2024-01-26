@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>RESULTADOS BUSCADOR</title>
+
+<!-- Bootstrap core CSS -->
+    <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+
+<br>
+	
+<div class="row">
+        <div class="col-md-4 order-md-2 mb-4" > </div>
+	
+		<div class="col-md-4 order-md-2 mb-4" align="center">
+	
+		<h6>TEMÁTICA: <span style="color:#ae2f14;" th:text="${param.tematica}"></span></h6>
+	
+		</div>
+
+		<div class="col-md-4 order-md-2 mb-4"></div>
+	
+</div>	
+
+
+<br><br>
+	
+	<div class="row">
+        <div class="col-md-4 order-md-2 mb-4" > </div>
+	
+		<div class="col-md-4 order-md-2 mb-4" align="center">
+		
+	
+		 <div th:each="r:${resultados}">
+	                
+	        	<h6><a th:href="${r.url}" th:text="${r.url}"></a></h6>
+	        		
+	        	<h5 th:text="${r.descripcion}"></h5>
+	        	<hr>
+	      
+		</div>
+		
+		
+
+		<div class="col-md-4 order-md-2 mb-4"></div>
+	
+	</div>
+	
+	</div>
+	
+<br><br>
+	
+	
+	
+<div class="row">
+        <div class="col-md-4 order-md-2 mb-4" > </div>
+	
+		<div class="col-md-4 order-md-2 mb-4" align="center">
+	
+		<a href="toMenu">VOLVER</a>
+	
+		</div>
+
+		<div class="col-md-4 order-md-2 mb-4"></div>
+	
+</div>	
+
+</body>
+</html>
