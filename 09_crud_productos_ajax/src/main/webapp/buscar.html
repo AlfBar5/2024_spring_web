@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Buscador por tematica</title>
+
+
+
+<!-- Bootstrap core CSS -->
+    <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- jQuery AJAX -->
+<script src="
+https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js
+"></script> 
+
+</head>
+<body class="bg-light">
+
+<br><br>
+	
+	<div class="row">
+        <div class="col-md-4 order-md-2 mb-4"> </div>
+	
+	<div class="col-md-4 order-md-2 mb-4">
+	
+	<!-- Le ponemos buscar por que lo hemos definido en el controller @GetMapping(value="buscar") -->
+	
+	INTRODUCE CATEGORÍA: 
+	<input type="text" id="categoria" name="categoria" class="form-control">
+	
+	<br>
+	<br>
+	<input type="button" class="btn btn-primary btn-lg btn-block" id="btnMostrar" value="BUSCAR">
+	
+	
+</div>
+
+<div class="col-md-4 order-md-2 mb-4"></div>
+
+</div>
+
+
+
+
+
+<br>
+	
+	<div class="row">
+        <div class="col-md-2 order-md-2 mb-2" > </div>
+	
+		<div class="col-md-8 order-md-2 mb-8" align="center">
+
+
+<div id="tablaProductos"></div>
+
+
+<div class="col-md-8 order-md-2 mb-8"></div>
+	
+	</div>
+	
+	</div>
+	
+<br>
+
+
+
+	
+<div class="row">
+        <div class="col-md-4 order-md-2 mb-4" > </div>
+	
+		<div class="col-md-4 order-md-2 mb-4" align="center">
+	
+		<a href="toIndex">VOLVER</a>
+	
+		</div>
+
+		<div class="col-md-4 order-md-2 mb-4"></div>
+	
+</div>	
+
+
+<!-- var url="buscar"; -> es la petición al controller  @GetMapping(value="buscar" -->
+
+<!-- var params={"categoria":$("#categoria").val()}; es el parámetro que le pasamos al controller-->
+<!--  @RequestParam("categoria") String categoria  -->
+
+<script type="text/javascript">
+		$("#btnMostrar").click(function(){
+			var url="buscar";
+			var params={"categoria":$("#categoria").val()};
+			gestionarPeticion(url,params);
+		});
+	
+		function gestionarPeticion(url,params){
+			$.get(url,params,function(data){
+				var tabla="<table class='table table-light'><tr><th>Producto</th><th>Precio</th></tr>";
+				$.each(data,function(i,p){
+					tabla+="<tr><td>"+p.nombre+"</td><td>"+p.precio+"</td></tr>";
+				});
+				tabla+="</table>";
+				$("#tablaProductos").html(tabla);
+			});
+		}
+	</script>
+	
+	
+	
+
+</body>
+</html>

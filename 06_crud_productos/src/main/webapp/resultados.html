@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>index productos</title>
+
+<!-- Bootstrap core CSS -->
+    <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<br><br>
+	
+
+
+
+
+
+	
+<div class="row">
+        <div class="col-md-4 order-md-2 mb-4" > </div>
+	
+		<div class="col-md-4 order-md-2 mb-4" align="center"> 
+		
+		<h6>CATEGORÍA: <span style="color:#ae2f14;" th:text="${param.categoria}"></span></h6>
+	
+		<a href="toIndex">VOLVER</a>
+	
+		</div>
+
+		<div class="col-md-4 order-md-2 mb-4"></div>
+	
+</div>	
+
+
+
+
+
+
+<br><br>
+	
+	<div class="row">
+        <div class="col-md-2 order-md-2 mb-2" > </div>
+	
+		<div class="col-md-8 order-md-2 mb-8" align="center">
+		
+		
+			
+<table class='table table-light'>
+		
+		
+	<thead>
+      <tr>
+      <th style="text-align:center;">ID PRODUCTO</th>
+        <th style="text-align:center;">NOMBRE</th>
+        <th style="text-align:center;">PRECIO</th>
+        
+      </tr>
+    </thead>
+		
+	
+		 <tr th:each="r:${resultados}">
+		 
+		 <td style="text-align:center;"><span th:text="${r.idProducto}"></span>
+	     <td style="text-align:center;"><span th:text="${r.nombre}"></span>           
+	     <td style="text-align:center;"><span th:text="${r.precio}"></span>
+	      	
+	      
+		</tr>
+		
+	</table>	
+
+		<div class="col-md-8 order-md-2 mb-8"></div>
+	
+	</div>
+	
+	</div>
+	
+<br><br>

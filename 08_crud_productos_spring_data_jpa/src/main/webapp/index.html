@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>index productos</title>
+
+<!-- Bootstrap core CSS -->
+    <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<br>
+
+
+	
+<div class="row">
+        <div class="col-md-4 order-md-2 mb-4" > </div>
+	
+		<div class="col-md-4 order-md-2 mb-4" align="center">
+	
+		<img src="img/logo.jpg" width="120px" height="120px">
+	
+		</div>
+
+		<div class="col-md-4 order-md-2 mb-4"></div>
+	
+</div>	
+	
+
+
+	
+<div class="row">
+        <div class="col-md-4 order-md-2 mb-4" > </div>
+	
+		<div class="col-md-4 order-md-2 mb-4" align="center">
+	
+		<a href="toBuscar">BUSCAR</a>
+	
+		</div>
+
+		<div class="col-md-4 order-md-2 mb-4"></div>
+	
+</div>	
+
+
+
+	
+<div class="row">
+        <div class="col-md-4 order-md-2 mb-4" > </div>
+	
+		<div class="col-md-4 order-md-2 mb-4" align="center">
+	
+		<a href="toAlta">ALTA PRODUCTO</a>
+	
+		</div>
+
+		<div class="col-md-4 order-md-2 mb-4"></div>
+	
+</div>	
+
+
+	
+<div class="row">
+        <div class="col-md-4 order-md-2 mb-4" > </div>
+	
+		<div class="col-md-4 order-md-2 mb-4" align="center">
+	
+		<a href="toModificar">MODIFICAR PRECIO PRODUCTO</a>
+	
+		</div>
+
+		<div class="col-md-4 order-md-2 mb-4"></div>
+	
+</div>	
+
+	
+<div class="row">
+        <div class="col-md-4 order-md-2 mb-4" > </div>
+	
+		<div class="col-md-4 order-md-2 mb-4" align="center">
+	
+		<a href="toEliminar">ELIMINAR PRODUCTO</a>
+	
+		</div>
+
+		<div class="col-md-4 order-md-2 mb-4"></div>
+	
+</div>	
+
+	
+<div class="row">
+        <div class="col-md-4 order-md-2 mb-4" > </div>
+	
+		<div class="col-md-4 order-md-2 mb-4" align="center">
+	
+		<div style="color:#FF2D00;" th:if="${mensajeAlta}" th:text="${mensajeAlta}"></div>
+		<div style="color:#FF2D00;" th:if="${mensajeEliminar}" th:text="${mensajeEliminar}"></div>
+	
+		</div>
+
+		<div class="col-md-4 order-md-2 mb-4"></div>
+	
+</div>	
+
+
+
+
+<br>
+	
+	<div class="row">
+        <div class="col-md-2 order-md-2 mb-2" > </div>
+	
+		<div class="col-md-8 order-md-2 mb-8" align="center">
+		
+		
+			
+<table class='table table-light'>
+		
+		
+	<thead>
+      <tr>
+      <th style="text-align:center;">ID PRODUCTO</th>
+        <th style="text-align:center;">NOMBRE</th>
+        <th style="text-align:center;">PRECIO</th>
+        <th style="text-align:center;">CATEGORIA</th>
+      </tr>
+    </thead>
+		
+	  
+		 <tr th:each="r:${resultados}">
+		 
+		 <td style="text-align:center;"><span th:text="${r.idProducto}"></span>
+	     <td style="text-align:center;"><span th:text="${r.nombre}"></span>           
+	     <td style="text-align:center;"><span th:text="${r.precio}"></span>
+	     <td style="text-align:center;"><span th:text="${r.categoria}"></span>  	
+	      <!-- <a th:href=buscar?categoria="${r.url}" th:text="${r.categoria}"></a> -->
+		</tr>
+	
+	</table>	
+
+		<div class="col-md-8 order-md-2 mb-8"></div>
+	
+	</div>
+	
+	</div>
+	
+<br><br>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
