@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- los siguiente metas son para no- cache -->
+<meta http-equiv="Expires" content="0">
+<meta http-equiv="Last-Modified" content="0">
+<meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+<meta http-equiv="Pragma" content="no-cache"> 
+<meta charset="UTF-8">
+
+<title>ALTA CLIENTE</title>
+
+<!-- Bootstrap core CSS -->
+    <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+ <!-- ajax -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+
+<br><br>
+	
+<div class="row">
+    <div class="col-md-3 order-md-2 mb-4"> </div>
+	
+	<div class="col-md-6 order-md-2 mb-4">
+	
+	<!-- Le ponemos buscar por que lo hemos definido en el controller @GetMapping(value="buscar") -->
+	<form action="alta" method="POST"  onsubmit="return validar()" accept-charset="UTF-8">
+	
+		<div class="row">
+			<div class="col-md-6 order-md-2 mb-6"><label>USUARIO:</label> </div><div class="col-md-6 order-md-2 mb-6"><input type="text" id="usuario" name="usuario" class="form-control" required>  </div>
+			<br><br>
+			</div>
+			
+			<div class="row">
+			<div class="col-md-6 order-md-2 mb-6"><label>PASSWORD:</label> </div><div class="col-md-6 order-md-2 mb-6"><input type="text" id="password" name="password" class="form-control" required> </div>
+			<br><br>
+			</div>
+			
+			<div class="row">
+			<div class="col-md-6 order-md-2 mb-6"><label>REPETIR PASSWORD:</label> </div><div class="col-md-6 order-md-2 mb-6"><input type="text" id="repetir" name="repetir" class="form-control" required> </div>
+			<br><br>
+			</div>
+			
+			<div class="row">
+			<div class="col-md-6 order-md-2 mb-6"><label>EMAIL:</label> </div><div class="col-md-6 order-md-2 mb-6"><input type="text" id="email" name="email" class="form-control" required> </div>
+			<br><br>
+			</div>
+			
+			<div class="row">
+			<div class="col-md-6 order-md-2 mb-6"><label>TELÉFONO:</label> </div><div class="col-md-6 order-md-2 mb-6"><input type="text" id="telefono" name="telefono" class="form-control" required> </div>
+			<br><br>
+			</div>
+			
+			<div class="row">
+			<div class="col-md-6 order-md-2 mb-6"><label></label> </div><div class="col-md-6 order-md-2 mb-6"><input class="btn btn-primary btn-lg btn-block" type="submit" value="GUARDAR"> </div>
+			<br><br>
+			</div>
+		
+		</div>
+	</form>
+	
+	<div class="col-md-3 order-md-2 mb-4"></div>
+
+</div>
+
+
+<div class="row">
+    <div class="col-md-4 order-md-2 mb-4"></div>
+	
+	<div class="col-md-4 order-md-2 mb-4" align="center"><div th:if="${mensaje}" th:text="${mensaje}"></div></div>
+
+	<div class="col-md-4 order-md-2 mb-4"></div>
+
+</div>
+
+
+<div class="row">
+    <div class="col-md-4 order-md-2 mb-4"></div>
+	
+	<div class="col-md-4 order-md-2 mb-4" align="center"><a href="FrontController?operation=toLogin"><h5>VOLVER</h5> </a></div>
+
+	<div class="col-md-4 order-md-2 mb-4"></div>
+
+</div>
+
+
+
+
+<!--validar contraseña igual -->
+
+<script type="text/javascript">
+		function validar(){
+			var usuario=document.getElementById("usuario").value;
+			var password=document.getElementById("password").value;
+			var repetir=document.getElementById("repetir").value;
+			
+			if(password != repetir){
+				alert("Las contraseñas tienen que ser iguales");
+				return false;
+			}
+			
+			return true;
+		}
+	
+	
+	
+	</script>
+
+
+</body>
+</html>
