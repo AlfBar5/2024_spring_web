@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<!-- las siguientes etiquetas meta sirven para que el navegadorno cachee la página-->
+<meta http-equiv="Expires" content="0">
+<meta http-equiv="Last-Modified" content="0">
+<meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+<meta http-equiv="Pragma" content="no-cache">
+
+<title>Login</title>
+
+<!-- Bootstrap core CSS -->
+    <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<br><br>
+	
+	<div class="row">
+        <div class="col-md-4 order-md-2 mb-4"> </div>
+	
+	<div class="col-md-4 order-md-2 mb-4">
+	<form action="login" method="POST"  accept-charset="UTF-8">
+	<label>Introduce usuario:</label> <input type="text" name="usuario" class="form-control" required>
+	<br>
+	<br>
+	<label>Introduce contraseña:</label> <input type="password" name="password" class="form-control" required>
+	<br>
+	
+	<br>
+	<button class="btn btn-primary btn-lg btn-block" type="submit"> ENVIAR</button>
+	
+	</form>
+</div>
+
+<div class="col-md-4 order-md-2 mb-4"></div>
+
+</div>
+
+
+<div class="row">
+    <div class="col-md-4 order-md-2 mb-4"></div>
+	
+	<div class="col-md-4 order-md-2 mb-4" align="center"><a href="altacliente"><h5>RESGISTRO DE NUEVO USUARIO</h5> </a></div>
+
+	<div class="col-md-4 order-md-2 mb-4"></div>
+
+</div>
+
+
+
+<div class="row">
+    <div class="col-md-4 order-md-2 mb-4"></div>
+	
+	<div class="col-md-4 order-md-2 mb-4" align="center"><div th:if="${mensaje}" th:text="${mensaje}"></div> </h5></div>
+
+	<div class="col-md-4 order-md-2 mb-4"></div>
+
+</div>
+
+
+</body>
+</html>
